@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import SearchBox from './components/SearchBox';
+import LocationWeather from './components/LocationWeather'
 const api = {
   key: "5ef8d679c6f2e0c25241e354a96f4d6b",
   base: "https://api.openweathermap.org/data/2.5/",
@@ -16,7 +18,6 @@ function App() {
         .then(result => {
           setWeather(result);
           setQuery('');
-          console.log(result);
         });
     }
   }
@@ -36,31 +37,17 @@ function App() {
   return (
     <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? "app warm" : "app") : "app" }>
       <main>
-        <div className="search-box">
-          <input
-            type="text"
-            className="search-bar"
-            placeholder="Search..."
-            onChange={e => setQuery(e.target.value)}
-            value={query}
-            onKeyPress={search}
-          />
-        </div>
+        <SearchBox 
+          query={query} 
+          search={search} 
+          setQuery={setQuery}
+        />
         {(typeof weather.main != "undefined") ? (
-          <div>
-            <div className="location-box">
-              <div className="location">{weather.name}, {weather.sys.country}</div>
-              <div className="date">{dateBuilder(new Date())}</div>
-            </div>
-            <div className="weather-box">
-              <div className="temp">
-                {Math.round(weather.main.temp)}°C
-              </div>
-              <div className="weather">{weather.weather[0].main}</div>
-            </div>
-          </div>
+          <LocationWeather 
+            weather={weather}
+            dateBuilder={dateBuilder}
+          />
         ) : ('')}
-        
       </main>
     </div>
   );
