@@ -9,25 +9,37 @@ body {
 }
 
 .app {
+  background: #6190E8;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #A7BFE8, #0c1527);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #A7BFE8, #0c1527); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.app.warm {
+  background: #feb155;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #FF4E50, #feb155);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #FF4E50, #feb155); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */}
+
+main {
   background-image: url('./assets/cold-bg.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
   transition: 0.4s ease;
 }
 
-.app.warm {
+.main.warm {
   background-image: url('./assets/warm-bg.jpg');
 }
 
-main {
+.opacity {
   min-height: 100vh;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75));
-  padding: 0 25px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.60));
+  margin: 0 auto;
 }
 
 .search-box {
-  width: 100%;
-  margin: 0 0 75px;
+  max-width: 450px;
+  margin: 0px auto 75px auto;
 }
 
 .search-box .search-bar {
@@ -102,19 +114,27 @@ main {
 }
 
 @media only screen and (min-width: 600px) {  
+
   .app {
-    background-repeat: no-repeat;
-    background-position: center; 
-    background-size: cover;
+    padding: 30px;
   }
 
-  main {
-    padding: 25px;
+  .main {
+    width: 500px;
+    background-size: 500px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 5px 5px 20px;
+  }
+
+  .opacity {
+    width: 500px;
+    border-radius: 15px;
   }
 
   .search-box {
-    max-width: 600px;
-    margin: 0 auto 75px auto;
+    padding-top: 25px;
+    border-radius: 16px;
   }
 
   .search-box .search-bar {

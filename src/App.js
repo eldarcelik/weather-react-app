@@ -36,18 +36,20 @@ function App() {
 
   return (
     <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? "app warm" : "app") : "app" }>
-      <main>
-        <SearchBox 
-          query={query} 
-          search={search} 
-          setQuery={setQuery}
-        />
-        {(typeof weather.main != "undefined") ? (
-          <LocationWeather 
-            weather={weather}
-            dateBuilder={dateBuilder}
+      <main className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? "main warm" : "main") : "main" }>
+        <div className="opacity">
+          <SearchBox 
+            query={query} 
+            search={search} 
+            setQuery={setQuery}
           />
-        ) : ('')}
+          {(typeof weather.main != "undefined") ? (
+            <LocationWeather 
+              weather={weather}
+              dateBuilder={dateBuilder}
+            />
+          ) : ('')}
+        </div>
       </main>
     </div>
   );
