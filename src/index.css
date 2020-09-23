@@ -9,26 +9,41 @@ body {
 }
 
 .app {
-  background: #6190E8;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #A7BFE8, #0c1527);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #A7BFE8, #0c1527); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #DAE2F8;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #DAE2F8, #D6A4A4);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #DAE2F8, #D6A4A4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.app.warm {
-  background: #feb155;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #FF4E50, #feb155);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #FF4E50, #feb155); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */}
-
 main {
-  background-image: url('./assets/cold-bg.jpg');
+  background-image: url('./assets/city.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
   transition: 0.4s ease;
 }
 
-.main.warm {
-  background-image: url('./assets/warm-bg.jpg');
+.main.thunderstrom {
+  background-image: url('./assets/thunderstorm-bg.jpg');
+}
+
+.main.rain {
+  background-image: url('./assets/rain-bg.jpg');
+}
+
+.main.clouds {
+  background-image: url('./assets/clouds-bg.jpg');
+}
+
+.main.clear {
+  background-image: url('./assets/clear-bg.jpg');
+}
+
+.main.snow {
+  background-image: url('./assets/snow-bg.jpg');
+}
+
+.main.fog {
+  background-image: url('./assets/fog-bg.jpg');
 }
 
 .opacity {
@@ -121,7 +136,6 @@ main {
 
   .main {
     width: 500px;
-    background-size: 500px;
     margin: 0 auto;
     border-radius: 15px;
     box-shadow: 5px 5px 20px;
