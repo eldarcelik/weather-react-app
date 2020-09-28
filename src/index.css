@@ -9,40 +9,39 @@ body {
 }
 
 .app {
-  background: #DAE2F8;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #DAE2F8, #D6A4A4);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #DAE2F8, #D6A4A4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: url('./assets/city.jpg');
+  background-position: center;
 }
 
 main {
   background-image: url('./assets/city.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom;
+  background-position: center;
   transition: 0.4s ease;
 }
 
-.main.thunderstrom {
+.thunderstrom {
   background-image: url('./assets/thunderstorm-bg.jpg');
 }
 
-.main.rain {
+.rain {
   background-image: url('./assets/rain-bg.jpg');
 }
 
-.main.clouds {
+.clouds {
   background-image: url('./assets/clouds-bg.jpg');
 }
 
-.main.clear {
+.clear {
   background-image: url('./assets/clear-bg.jpg');
 }
 
-.main.snow {
+.snow {
   background-image: url('./assets/snow-bg.jpg');
 }
 
-.main.fog {
+.fog {
   background-image: url('./assets/fog-bg.jpg');
 }
 

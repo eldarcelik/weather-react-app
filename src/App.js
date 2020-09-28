@@ -10,6 +10,7 @@ function App() {
 
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
+  const [weatherType, setWeatherType] = useState('');
   const locationTrue = typeof weather.main != "undefined"; 
 
   const search = event => {
@@ -19,7 +20,10 @@ function App() {
         .then(result => {
           setWeather(result);
           setQuery('');
-        });
+          setWeatherType((result.weather[0].main).toLowerCase());
+        })
+        .catch((err) => {
+        })
     }
   }
 
@@ -35,33 +39,9 @@ function App() {
     return `${day} ${date} ${month} ${year}`
   }
 
-  const weatherType = weather => {
-    const mainWeather = weather.weather[0].main;
-    switch(mainWeather) {
-      case "Clouds": 
-        return "main clouds";
-        break;
-      case "Rain": 
-        return "main rain";
-        break; 
-      case "Thunderstorm": 
-        return "main thunderstrom";
-        break;
-      case "Clear": 
-        return "main clear";
-        break;
-      case "Snow": 
-        return "main snow";
-        break;
-      case "Fog": 
-        return "main fog"
-        break;
-    }
-  }
-
   return (
-    <div className="app">
-      <main className={locationTrue ? (weatherType(weather)) : "main" }>
+    <div className={locationTrue ? `app ${weatherType}` : "app"}>
+      <main className={locationTrue ? `main ${weatherType}` : "main"}>
         <div className="opacity">
           <SearchBox 
             query={query} 
